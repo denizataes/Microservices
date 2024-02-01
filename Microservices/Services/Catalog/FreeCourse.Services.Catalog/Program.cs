@@ -9,6 +9,7 @@ builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnC
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ICourseService, CourseService>();
 
 var databaseSettingsSection = builder.Configuration.GetSection("AppSettings:DatabaseSettings");
 builder.Services.Configure<DatabaseSettings>(databaseSettingsSection);
